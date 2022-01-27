@@ -1,0 +1,7 @@
+import rpyc
+
+if __name__ == '__main__':
+    connection = rpyc.connect("127.0.0.1", port=18812)
+    print('Connected\n calling fibonacci function from remote server')
+    n = input('Enter the number of Fibonacci sequence:')
+    print('\nFibonacci sequence:\t', connection.root.fib(int(n)))
